@@ -34,7 +34,7 @@
     <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function deleteProduk(e) {
             let id = e.getAttribute('data-id');
@@ -57,9 +57,12 @@
                         dataType: "text",
                         success: function(response) {
                             Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
                                 title: 'Success',
                                 text: response.message,
-                                icon: 'success'
+                                showConfirmButton: false,
+                                timer: 2000
                             }).then((result) => {
                                 window.location.href = '/admin/produk'
                             })

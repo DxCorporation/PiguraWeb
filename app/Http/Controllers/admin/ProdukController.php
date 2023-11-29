@@ -15,6 +15,7 @@ class ProdukController extends Controller
      */
     public function index()
     {
+
         if (request()->ajax()) {
             $produk = Produk::latest()->get();
 
@@ -77,7 +78,19 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+        function rupiah($angka)
+        {
+            if ($angka != null) {
+                $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
+                return $hasil_rupiah;
+            }
+        }
+        $produks = Produk::where('id', $id)->first();
+
+        return view('admin.produk.detail', [
+            'produks'   => $produks,
+            'harga'     => rupiah($produks->harga)
+        ]);
     }
 
     /**
@@ -85,7 +98,10 @@ class ProdukController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $produk = Produk::where('id', $id)->first();
+        return view('admin.produk.edit', [
+            'produk'    => $produk
+        ]);
     }
 
     /**
@@ -93,7 +109,27 @@ class ProdukController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->validate([
+            'nama'         => 'required',
+            'harga'          => 'required',
+            'desc'          => 'required',
+            'img'           => ['nullable', 'image', 'file', 'max:3024'],
+        ]);
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/back/', $fileName);
+
+            Storage::delete(['public/back/' . $request->imgLama]);
+
+            $data['img'] = $fileName;
+        } else {
+            $data['img'] = $request->imgLama;
+        }
+
+        Produk::find($id)->update($data);
+
+        return redirect(url('admin/produk'))->with('success', 'Data Produk Berhasil Diupdate!');
     }
 
     /**
@@ -105,7 +141,7 @@ class ProdukController extends Controller
         Storage::delete(['public/back/' . $data->img]);
         $data->delete();
         return response()->json([
-            'message'   => 'Data Article has been deleted'
+            'message'   => 'Data Produk Berhasil Dihapus'
         ]);
     }
 }

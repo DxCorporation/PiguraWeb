@@ -22,4 +22,9 @@ Route::get('/', function () {
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 Route::get('/admin/estimasi', [EstimasiController::class, 'index']);
+Route::get('/admin/bahan-formula', [EstimasiController::class, 'bahan']);
+Route::post('/admin/bahan/create', [EstimasiController::class, 'bahanCreate']);
+Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
+Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
+
 Route::resource('/admin/produk', ProdukController::class);
