@@ -45,7 +45,30 @@
                                 class="ti ti-plus"></i> Tambah</button>
                     </div>
                     <div class="card-body">
-
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Produk</th>
+                                    <th class="text-center">Formula</th>
+                                </tr>
+                                @foreach ($formula as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->produk->nama }}</td>
+                                        <td class="text-center">
+                                            @foreach ($detail as $value)
+                                                @if ($value->formula_id == $item->id)
+                                                    <input type="number" value="{{ $value->qty }}" disabled
+                                                        style="width: 50px">
+                                                    <span class="me-3">{{ $value->bahan->nama }}</span>
+                                                @endif
+                                            @endforeach
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

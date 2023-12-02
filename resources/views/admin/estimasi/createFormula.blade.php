@@ -38,7 +38,6 @@
                                     <input type="number" name="bahan[{{ $item->id }}]" class="form-control">
                                 </div>
                             @endforeach
-
                         </div>
 
                     </div>

@@ -21,7 +21,9 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+Route::get('/tes', [DashboardController::class, 'tes']);
 Route::get('/admin/estimasi', [EstimasiController::class, 'index']);
+Route::post('/admin/estimasi/hasil', [EstimasiController::class, 'hasil']);
 Route::get('/admin/bahan-formula', [EstimasiController::class, 'bahan']);
 Route::post('/admin/bahan/create', [EstimasiController::class, 'bahanCreate']);
 Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
