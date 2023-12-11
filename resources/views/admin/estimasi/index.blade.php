@@ -51,14 +51,18 @@
                                 <small class="mb-1">*Input jumlah persedian bahan yang tersedia</small>
                             </div>
                             <div class="row">
-                                @foreach ($bahan as $item)
-                                    <div class="col-sm-4 mb-2">
-                                        <input type="hidden" name="idBahan[{{ $item->id }}]"
-                                            value="{{ $item->id }}">
-                                        <label for="">{{ $item->nama }}</label>
-                                        <input type="number" name="bahan[{{ $item->id }}]" class="form-control">
-                                    </div>
-                                @endforeach
+                                <div class="col-sm-4 mb-2">
+                                    <label for="">Kayu</label>
+                                    <input type="number" name="kayu" class="form-control">
+                                </div>
+                                <div class="col-sm-4 mb-2">
+                                    <label for="">Triplek</label>
+                                    <input type="number" name="triplek" class="form-control">
+                                </div>
+                                <div class="col-sm-4 mb-2">
+                                    <label for="">Kaca</label>
+                                    <input type="number" name="kaca" class="form-control">
+                                </div>
                             </div>
                             <div class="float-end mb-3">
                                 <button type="submit" class="btn btn-primary px-3">Simpan</button>
