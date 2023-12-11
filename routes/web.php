@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\EstimasiController;
 use App\Http\Controllers\admin\ProdukController;
+use App\Http\Controllers\user\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 Route::get('/tes', [DashboardController::class, 'tes']);
