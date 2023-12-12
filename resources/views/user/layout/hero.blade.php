@@ -44,7 +44,7 @@
       <a href="index.html" class="hero-logo" data-aos="zoom-in"><img src="user/img/piguralogo.png" alt=""></a>
       <h1 data-aos="zoom-in">Pigura Store</h1>
       <h2 data-aos="fade-up">Kami Memberikan Sentuhan Elegan Pada Setiap Cerita</h2>
-      <a data-aos="fade-up" data-aos-delay="200" href="#about" class=" scrollto"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+      <a data-aos="fade-up" data-aos-delay="200" href="{{ url('/') }}#about" class=" scrollto"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
   <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
 </svg></a>
@@ -56,16 +56,16 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="index.html"><img src="user/img/piguralogo.png" alt="" class="img-fluid"></a>
+        <h3 href="{{ url('/') }}#about" class="font"><img src="user/img/piguralogo.png" alt="" class="img-fluid">  Pigura Store</h3>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Profil</a></li>
-          <li><a class="nav-link scrollto" href="#services">Petunjuk</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Produk & Estimasi</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto active" href="{{ url('/') }}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/') }}#about">Profil</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/petunjuk') }}#services">Petunjuk</a></li>
+          <li><a class="nav-link scrollto " href="{{ url('/Produk&Estimasi') }}#portfolio">Produk & Estimasi</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -83,19 +83,13 @@
 
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <a href="#header" class="scrollto footer-logo"><img src="user/img/hero-logo.png" alt=""></a>
-            <h3>Knight</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <a href="#header" class="scrollto footer-logo"><img src="user/img/piguralogo.png" alt=""></a>
+            <h1 class="font">Pigura Store</h1>
+            <p>Kami Memberikan Sentuhan Elegan Pada Setiap Cerita</p>
           </div>
         </div>
 
-        <div class="row footer-newsletter justify-content-center">
-          <div class="col-lg-6">
-            <form action="" method="post">
-              <input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
+        
 
         <div class="social-links">
           <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

@@ -92,7 +92,7 @@ h6 {
     z-index: 997;
     transition: all 0.5s;
     background: url("../img/hero-bg.png");
-    box-shadow: 0 4px 10px -3px hsla(0, 0%, 75%, 0.5);
+    box-shadow: 0 4px 10px -3px hsla(0, 100%, 100%, 0.5);
 }
 
 #header .logo h1 {
@@ -105,7 +105,7 @@ h6 {
 }
 
 #header .logo h1 a,
-#header .logo h1 a:hover {
+#header .logo h1 a :hover {
     color: #fff;
     text-decoration: none;
 }
