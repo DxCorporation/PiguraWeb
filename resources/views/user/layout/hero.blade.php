@@ -64,7 +64,8 @@
           <li><a class="nav-link scrollto active" href="{{ url('/') }}#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/') }}#about">Profil</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/petunjuk') }}#services">Petunjuk</a></li>
-          <li><a class="nav-link scrollto " href="{{ url('/Produk&Estimasi') }}#portfolio">Produk & Estimasi</a></li>
+          <li><a class="nav-link scrollto " href="{{ url('/Estimasi') }}#estimasi"> Estimasi</a></li>
+          <li><a class="nav-link scrollto " href="{{ url('/Produk') }}#produk">Produk</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

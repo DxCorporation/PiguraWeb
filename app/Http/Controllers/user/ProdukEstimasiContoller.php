@@ -13,4 +13,6 @@ class ProdukEstimasiContoller extends Controller
         $data = Produk::all();
         return view('user.productestimasi',['data' => $data]);
     }  
+
+
 }
