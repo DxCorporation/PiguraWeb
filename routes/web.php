@@ -37,3 +37,6 @@ Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']
 Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
 
 Route::resource('/admin/produk', ProdukController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
