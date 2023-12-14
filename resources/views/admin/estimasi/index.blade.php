@@ -3,10 +3,10 @@
 @section('content')
     <div class="swal" data-swal="{{ session('success') }}"></div>
     <div style="min-height: 80vh">
-        <div class="card">
+        {{-- <div class="card">
             <a href="{{ url('/admin/bahan-formula') }}" class="btn btn-success"> <i class="ti ti-edit"></i> Bahan /
                 Formula</a>
-        </div>
+        </div> --}}
         <div class="card">
             <div class="card-header">
                 Hitung Estimasi
@@ -14,31 +14,56 @@
             <form action="{{ url('/admin/estimasi/hasil') }}" method="post">
                 @csrf
                 <div class="card-body">
-                    <div class="d-flex justify-content-center">
-                        {{-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#produk">Pilih
-                                Produk</button> --}}
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <th>Produk</th>
-                                <th class="text-center">Formula</th>
-                            </tr>
-                            @foreach ($formula as $item)
-                                <tr>
-                                    <td>{{ $item->produk->nama }}</td>
-                                    <td class="text-center">
-                                        @foreach ($detail as $value)
-                                            @if ($value->formula_id == $item->id)
-                                                <input type="number" name="{{ $value->bahan->nama }}"
-                                                    value="{{ $value->qty }}" disabled style="width: 50px">
-                                                <span class="me-3">{{ $value->bahan->nama }}</span>
-                                            @endif
-                                        @endforeach
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </table>
+
+                    <div>
+                        <p>
+                            Menghitung Estimasi Jumlah Produk yang dapat diproduksi berdasarkan persediaan bahan <br>
+                            Produk yang dihitung yaitu :
+                        </p>
+                        <div class="accordion col-6 mb-3" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Pigura 6 R
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        Bahan : 80cm Kayu + 300cm<sup>2</sup> + 320cm<sup>2</sup>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Pigura 8 R
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        Bahan : 100cm Kayu + 500cm<sup>2</sup> + 520cm<sup>2</sup>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        Pigura 10 Rs
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        Bahan : 130cm Kayu + 875cm<sup>2</sup> + 900cm<sup>2</sup>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <strong>Persediaan Bahan</strong><br>
                     <div class="mb-2">
@@ -46,20 +71,20 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-4 mb-2">
-                            <label for="">Kayu</label>
+                            <label for=""><strong>Kayu</strong> (cm)</label>
                             <input type="number" name="kayu" class="form-control">
                         </div>
                         <div class="col-sm-4 mb-2">
-                            <label for="">Triplek</label>
+                            <label for=""><strong>Triplek</strong> (cm<sup>2</sup>)</label>
                             <input type="number" name="triplek" class="form-control">
                         </div>
                         <div class="col-sm-4 mb-2">
-                            <label for="">Kaca</label>
+                            <label for=""><strong>Kaca</strong> (cm<sup>2</sup>)</label>
                             <input type="number" name="kaca" class="form-control">
                         </div>
                     </div>
                     <div class="float-end mb-3">
-                        <button type="submit" class="btn btn-primary px-3">Simpan</button>
+                        <button type="submit" class="btn btn-primary px-3">Hitung</button>
                     </div>
                 </div>
             </form>
