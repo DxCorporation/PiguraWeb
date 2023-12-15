@@ -26,7 +26,7 @@ Route::get('/petunjuk', [PetunjukController::class, 'index']);
 Route::get('/Produk', [ProdukEstimasiContoller::class, 'index']);
 Route::get('/Developer', [TeamController::class, 'index']);
 Route::get('/Estimasi', [esController::class, 'index']);
-
+Route::post('/estimasi', [esController::class, 'hasil']);
 
 
 Route::middleware('auth')->group(function () {
@@ -38,9 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/bahan/create', [EstimasiController::class, 'bahanCreate']);
     Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
     Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
+    Route::resource('/admin/produk', ProdukController::class);
 });
 
-Route::resource('/admin/produk', ProdukController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
