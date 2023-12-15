@@ -27,14 +27,18 @@ Route::get('/Produk', [ProdukEstimasiContoller::class, 'index']);
 Route::get('/Developer', [TeamController::class, 'index']);
 Route::get('/Estimasi', [esController::class, 'index']);
 
-Route::get('/admin/dashboard', [DashboardController::class, 'index']);
-Route::get('/tes', [DashboardController::class, 'tes']);
-Route::get('/admin/estimasi', [EstimasiController::class, 'index']);
-Route::post('/admin/estimasi/hasil', [EstimasiController::class, 'hasil']);
-Route::get('/admin/bahan-formula', [EstimasiController::class, 'bahan']);
-Route::post('/admin/bahan/create', [EstimasiController::class, 'bahanCreate']);
-Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
-Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [DashboardController::class, 'index']);
+    Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+    Route::get('/admin/estimasi', [EstimasiController::class, 'index']);
+    Route::post('/admin/estimasi/hasil', [EstimasiController::class, 'hasil']);
+    Route::get('/admin/bahan-formula', [EstimasiController::class, 'bahan']);
+    Route::post('/admin/bahan/create', [EstimasiController::class, 'bahanCreate']);
+    Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
+    Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
+});
 
 Route::resource('/admin/produk', ProdukController::class);
 Auth::routes();
