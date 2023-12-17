@@ -1,51 +1,67 @@
-
 @extends('user.layout.hero')
 
 @section('content')
-  <main id="main">
+    <main id="main">
 
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2 class="font">Profil Pigura Store</h2>
-          <p>Magnam dolores commodi suscipit eius consequatur</p>
-        </div>
+                <div class="section-title" data-aos="fade-up">
+                    <h2 class="font">Profil Ridwan Pigura</h2>
+                </div>
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="image">
-              <img src="user/img/Profile1.jpg" class="img-fluid" alt="">
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <div class="frame-container ">
+                                <img class="img-frame" src="user/img/frame2.png" alt="">
+                                <div class="text-img text-justify">
+                                    <p>
+                                        Ridwan Pigura adalah tempat yang menyediakan berbagai macam pigura atau bingkai foto
+                                        dengan
+                                        berbagai desain dan ukuran.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <div class="frame-container">
+                                <img class="img-frame" src="user/img/frame1.png" alt="">
+                                <div class="text-img">
+                                    <p>
+                                        Ridwan Pigura menawarkan pilihan bahan dan warna yang beragam, sehingga Anda dapat
+                                        menyesuaikan pigura dengan dekorasi ruangan Anda dengan berbagai opsi yang
+                                        ditawarkan.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <div class="frame-container ">
+                                <img class="img-frame" src="user/img/frame3.png" alt="">
+                                <div class="text-img">
+                                    <p>
+                                        Ridwan Pigura menjadi destinasi ideal bagi teman - teman yang ingin menambahkan
+                                        sentuhan personal dan estetis dalam memajang kenangan atau karya seni.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-              <h3>Voluptatem dignissimos provident quasi corporis</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
-   
+        </section><!-- End About Us Section -->
 
 
-    
-  </main><!-- End #main -->
+
+
+
+    </main><!-- End #main -->
 @endsection

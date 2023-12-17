@@ -6,7 +6,7 @@
 
             <div class="section-title" data-aos="fade-up">
                 <h2 class="font">Estimasi Produksi</h2>
-                <p>Kami Memberikan Sentuhan Elegan Pada Setiap Cerita</p>
+
             </div>
 
             <div class="card">
