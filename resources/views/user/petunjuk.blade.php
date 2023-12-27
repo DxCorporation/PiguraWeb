@@ -1,4 +1,4 @@
-@extends('user.layout.hero')
+@extends('user.layout.layout')
 
 @section('content')
     <main id="main">

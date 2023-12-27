@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('user/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('user/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="user/img/favicon.png" rel="icon">
+    <link href="user/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -19,15 +19,15 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('user/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('user/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="user/vendor/aos/aos.css" rel="stylesheet">
+    <link href="user/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="user/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="user/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="user/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="user/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">
+    <link href="user/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Knight
@@ -39,21 +39,25 @@
 </head>
 
 <body>
+
     <!-- ======= Header ======= -->
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <a href="index.html"><img src="user/img/piguralogo.png" alt="" class="img-fluid"></a>
+                <h3 href="{{ url('/') }}#about" class="font"><img src="user/img/piguralogo.png" alt=""
+                        class="img-fluid"> Pigura Store</h3>
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{ url('/') }}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="{{ url('/') }}#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="{{ url('/') }}#about">Profil</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('/petunjuk') }}">Petunjuk</a></li>
-                    <li><a class="nav-link scrollto " href="{{ url('/Produk&Estimasi') }}">Produk & Estimasi</a></li>
-                    <li><a class="nav-link scrollto" href="{{ url('/Developer') }}">Team</a></li>
+                    <li><a class="nav-link scrollto " href="{{ url('/Produk') }}#produk">Produk</a></li>
+                    <li><a class="nav-link scrollto" href="{{ url('/petunjuk') }}#services">Petunjuk</a></li>
+                    <li><a class="nav-link scrollto " href="{{ url('/Estimasi') }}#estimasi"> Estimasi</a></li>
+
+                    <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Team</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -71,22 +75,15 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <a href="#header" class="scrollto footer-logo"><img src="user/img/hero-logo.png"
+                        <a href="#header" class="scrollto footer-logo"><img src="user/img/piguralogo.png"
                                 alt=""></a>
-                        <h3>Knight</h3>
-                        <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe
-                            commodi placeat.</p>
+                        <h1 class="font">Ridwan Pigura</h1>
+                        <p>Kami Memberikan Sentuhan Elegan Pada Setiap Cerita</p>
+                        <small>Jl. Anggrek Jl. Sagan No.20, Sagan, Caturtunggal, Depok,Sleman, Yogyakarta</small>
                     </div>
                 </div>
 
-                <div class="row footer-newsletter justify-content-center">
-                    <div class="col-lg-6">
-                        <form action="" method="post">
-                            <input type="email" name="email" placeholder="Enter your Email"><input type="submit"
-                                value="Subscribe">
-                        </form>
-                    </div>
-                </div>
+
 
                 <div class="social-links">
                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -117,15 +114,15 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="{{ asset('user/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('user/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('user/vendor/php-email-form/validate.js') }}"></script>
+    <script src="user/vendor/aos/aos.js"></script>
+    <script src="user/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="user/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="user/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="user/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="user/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="{{ asset('user/js/main.js') }}"></script>
+    <script src="user/js/main.js"></script>
 
 </body>
 

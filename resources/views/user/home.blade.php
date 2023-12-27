@@ -11,8 +11,15 @@
                     <h2 class="font">Profil Ridwan Pigura</h2>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4" data-aos="fade-left">
+                <div class="row justify-content-between">
+                    <div class="col-md-4 mb-3" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+
+                            <img class="image" src="user/img/profile.jpg" width="100%" alt="">
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
                             <div class="frame-container ">
                                 <img class="img-frame" src="user/img/frame2.png" alt="">
@@ -26,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-left">
+                    <div class="col-md-4 mb-3" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
                             <div class="frame-container">
                                 <img class="img-frame" src="user/img/frame1.png" alt="">
@@ -40,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4" data-aos="fade-left">
+                    <div class="col-md-4 mb-3" data-aos="fade-left">
                         <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
                             <div class="frame-container ">
                                 <img class="img-frame" src="user/img/frame3.png" alt="">
@@ -51,6 +58,13 @@
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-3" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+
+                            <img class="image" src="user/img/profile2.jpg" width="100%" alt="">
+
                         </div>
                     </div>
                 </div>
