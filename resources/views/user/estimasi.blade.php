@@ -125,10 +125,10 @@
                                     </div>
                                 </div>
                             </div>
-                        @endisset
-                </div>
-            </form>
+                        @endif
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
