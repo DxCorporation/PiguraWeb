@@ -33,6 +33,8 @@ Route::post('/estimasi', [esController::class, 'hasil']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [DashboardController::class, 'index']);
     Route::get('/admin/dashboard', [DashboardController::class, 'index']);
+    Route::get('/admin/dashboard/bulan', [DashboardController::class, 'bulan']);
+    Route::get('/admin/dashboard/tahun', [DashboardController::class, 'tahun']);
     Route::get('/admin/estimasi', [EstimasiController::class, 'index']);
     Route::post('/admin/estimasi/hasil', [EstimasiController::class, 'hasil']);
     Route::get('/admin/bahan-formula', [EstimasiController::class, 'bahan']);

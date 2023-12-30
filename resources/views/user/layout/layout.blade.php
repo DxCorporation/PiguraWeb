@@ -47,7 +47,7 @@
 
             <div class="logo">
                 <h3 href="{{ url('/') }}#about" class="font"><img src="user/img/piguralogo.png" alt=""
-                        class="img-fluid"> Pigura Store</h3>
+                        class="img-fluid"> Ridwan Pigura</h3>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -58,7 +58,7 @@
                     <li><a class="nav-link scrollto" href="{{ url('/petunjuk') }}#services">Petunjuk</a></li>
                     <li><a class="nav-link scrollto " href="{{ url('/Estimasi') }}#estimasi"> Estimasi</a></li>
 
-                    <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Pengembang</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

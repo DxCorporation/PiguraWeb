@@ -92,45 +92,7 @@
     </div>
 
 
-    <div class="modal fade" id="produk" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah Bahan</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th>No</th>
-                            <th>Produk</th>
-                            <th class="text-center">Formula</th>
-                        </tr>
-                        @foreach ($formula as $item)
-                            <tr>
-                                <td><input type="checkbox" class="form-check-input mt-0" name="{{ $item->produk->nama }}"
-                                        value="{{ $item->id }}"></td>
-                                <td>{{ $item->produk->nama }}</td>
-                                <td class="text-center">
-                                    @foreach ($detail as $value)
-                                        @if ($value->formula_id == $item->id)
-                                            <input type="number" value="{{ $value->qty }}" disabled style="width: 50px">
-                                            <span class="me-3">{{ $value->bahan->nama }}</span>
-                                        @endif
-                                    @endforeach
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-    @include('admin.estimasi.createBahan')
+    {{-- @include('admin.estimasi.createBahan') --}}
 @endsection
 
 @push('js')

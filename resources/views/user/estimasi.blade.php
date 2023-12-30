@@ -103,25 +103,33 @@
 
                         @if ($p6r != null)
                             <div class="d-flex justify-content-center">
-                                <div class="card col-sm-6">
-                                    <div class="card-header">
-                                        <h4>Hasil Perhitungan</h4>
+                                <div class="col-sm-6">
+                                    <div class="mb-2 card">
+                                        <div class="card-header">
+                                            <h4>Hasil Perhitungan</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table">
+                                                <tr>
+                                                    <th>Pigura 6 R</th>
+                                                    <th>: {{ $p6r }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Pigura 8 R</th>
+                                                    <th>: {{ $p8r }}</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Pigura 10 R</th>
+                                                    <th>: {{ $p10rs }}</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+
                                     </div>
-                                    <div class="card-body">
-                                        <table class="table">
-                                            <tr>
-                                                <th>Pigura 6 R</th>
-                                                <th>: {{ $p6r }}</th>
-                                            </tr>
-                                            <tr>
-                                                <th>Pigura 8 R</th>
-                                                <th>: {{ $p8r }}</th>
-                                            </tr>
-                                            <tr>
-                                                <th>Pigura 10 R</th>
-                                                <th>: {{ $p10rs }}</th>
-                                            </tr>
-                                        </table>
+                                    <div class="alert alert-danger">
+                                        <p>
+                                            *Apabila ada hasil negatif berarti terdapat bahan yang kurang
+                                        </p>
                                     </div>
                                 </div>
                             </div>

@@ -24,7 +24,7 @@
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2 class="font">Produk Pigura Store</h2>
+                    <h2 class="font">Produk Ridwan Pigura</h2>
                     <p>Kami Memberikan Sentuhan Elegan Pada Setiap Cerita</p>
                 </div>
 
@@ -41,7 +41,7 @@
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($data as $dat)
-                        <div class="col-md-3 portfolio-item {{ $dat->Category->slug }}">
+                        <div class="col-lg-3 col-md-6 portfolio-item {{ $dat->Category->slug }}">
                             <div class="card shadow p-card">
                                 <img src="{{ asset('storage/back/' . $dat->img) }}" class="card-img-top-fix" alt="...">
                                 <div class="card-body">

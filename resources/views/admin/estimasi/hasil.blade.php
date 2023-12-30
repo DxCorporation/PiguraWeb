@@ -1,90 +1,71 @@
 @extends('admin.layout.index')
 
 @section('content')
+    <?php
+    function tabel($matrik)
+    {
+        echo '<table class="table">';
+        foreach ($matrik as $key => $value) {
+            echo '<tr>';
+            echo '<td>' . $matrik[$key][0] . '</td>';
+            echo '<td>' . $matrik[$key][1] . '</td>';
+            echo '<td>' . $matrik[$key][2] . '</td>';
+            echo '<td>' . $matrik[$key][3] . '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+    ?>
     <div class="card">
         <div class="card-body">
             <div class="row">
                 <h4>Metode Gauss-Jordan</h4>
                 <div class="col-sm-6">
-                    <table class="table">
-                        @foreach ($matrix7 as $key => $value)
-                            <tr>
-                                <td>{{ $matrix7[$key][0] }}</td>
-                                <td>{{ $matrix7[$key][1] }}</td>
-                                <td>{{ $matrix7[$key][2] }}</td>
-                                <td>{{ $matrix7[$key][3] }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
+                    <div class="mb-2">
+                        <strong>Langkah 1 : Augmented Matrik</strong>
+                        {{ tabel($matrix) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 2 : Normalisasi Baris Pertama</strong><br>
+                        <small>*Baris pertama dibagi dengan kolom pertamanya yaitu {{ $matrix[0][0] }}</small>
+                        {{ tabel($matrix2) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 3 : Kolom Pertama Baris 2 dan 3 diubah menjadi 0</strong><br>
+                        <small>*Baris 2 dikurangi hasil perkalian antara baris 2 kolom 1 dan baris 1</small><br>
+                        <small>*Baris 3 dikurangi hasil perkalian antara baris 3 kolom 1 dan baris 1</small>
+                        {{ tabel($matrix3) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 4 : Normalisasi Baris kedua</strong><br>
+                        <small>*Baris kedua dibagi dengan kolom pertamanya yaitu {{ $matrix3[1][1] }}</small>
+                        {{ tabel($matrix4) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 5 : Kolom Kedua Baris 1 dan 3 diubah menjadi 0</strong><br>
+                        <small>*Baris 1 dikurangi hasil perkalian antara baris 1 kolom 2 dan baris 2</small><br>
+                        <small>*Baris 3 dikurangi hasil perkalian antara baris 3 kolom 2 dan baris 2</small>
+                        {{ tabel($matrix5) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 6 : Normalisasi Baris ketiga</strong><br>
+                        <small>*Baris ketiga dibagi dengan kolom pertamanya yaitu {{ $matrix5[2][2] }}</small>
+                        {{ tabel($matrix6) }}
+                    </div>
+                    <div class="mb-2">
+                        <strong>Langkah 7 : Kolom Ketiga Baris 1 dan 2 diubah menjadi 0</strong><br>
+                        <small>*Baris 1 dikurangi hasil perkalian antara baris 1 kolom 3 dan baris 3</small><br>
+                        <small>*Baris 2 dikurangi hasil perkalian antara baris 2 kolom 3 dan baris 3</small>
+                        {{ tabel($matrix7) }}
+                    </div>
                     <p>
+                        <strong>Hasil Estimasi</strong><br>
                         <label for="">Pigura 6R = {{ $matrix7[0][3] }}</label><br>
                         <label for="">Pigura 8R = {{ $matrix7[1][3] }}</label><br>
                         <label for="">Pigura 10Rs = {{ $matrix7[2][3] }}</label><br>
                     </p>
                 </div>
-                <div class="accordion accordion-flush col-sm-6" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Detail Metode Gauss-Jordann
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                            data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                @foreach ($matrix as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix2 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix3 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix4 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix5 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix6 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                                <p>=========================</p>
-                                @foreach ($matrix7 as $item)
-                                    <p>{{ $item }}</p>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <hr>
-                <h4>Metode Gauss</h4>
-                <div class="col-sm-6">
-                    <table class="table">
-                        @foreach ($gauss as $key => $value)
-                            <tr>
-                                <td>{{ $gauss[$key][0] }}</td>
-                                <td>{{ $gauss[$key][1] }}</td>
-                                <td>{{ $gauss[$key][2] }}</td>
-                                <td>{{ $gauss[$key][3] }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
-                    <p>
-                        <label for="">Pigura 6R = {{ $gauss6r }}</label><br>
-                        <label for="">Pigura 8R =
-                            {{ $gauss[1][3] - $gauss[1][2] * $gauss[2][3] }}</label><br>
-                        <label for="">Pigura 10Rs = {{ $gauss[2][3] }}</label>
-                    </p>
-                </div>
             </div>
         </div>
     </div>

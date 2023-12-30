@@ -24,7 +24,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Kategori</th>
                         <th scope="col" class="text-center">Harga</th>
-                        <th scope="col" class="text-center">Option</th>
+                        <th style="width:20%" scope="col" class="text-center">Option</th>
                     </tr>
                 </thead>
                 <tbody>
