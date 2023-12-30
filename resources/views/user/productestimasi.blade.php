@@ -1,11 +1,22 @@
 @extends('user.layout.layout')
 
+@section('css')
+    <link href="user/css/card.css" rel="stylesheet">
+@endsection
+
 @section('content')
+    <?php
+    
+    function rupiah($angka)
+    {
+        if ($angka != null) {
+            $hasil_rupiah = 'Rp ' . number_format($angka, 0, '.', '.');
+            return $hasil_rupiah;
+        }
+    }
+    
+    ?>
     <main id="main">
-        <!-- ======= Estimasi Section ======= -->
-
-        <!-- ======= Estimasi endSection ======= -->
-
 
 
         <!-- ======= Portfolio Section ======= -->
@@ -21,34 +32,31 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
+                            @foreach ($categories as $item)
+                                <li data-filter=".{{ $item->slug }}">{{ $item->nama }}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     @foreach ($data as $dat)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img src="{{ asset('storage/back/' . $dat->img) }}" class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4><?= $dat->nama ?></h4>
-
-                                    <div class="portfolio-links">
-                                        <a href="{{ asset('storage/back/' . $dat->img) }}" data-gallery="portfolioGallery"
-                                            class="portfolio-lightbox" title="<?= $dat->nama ?>"><i
-                                                class="bx bx-plus"></i></a>
-                                    </div>
+                        <div class="col-md-3 portfolio-item {{ $dat->Category->slug }}">
+                            <div class="card shadow p-card">
+                                <img src="{{ asset('storage/back/' . $dat->img) }}" class="card-img-top-fix" alt="...">
+                                <div class="card-body">
+                                    <h6 class=""><?= $dat->nama ?></h6>
+                                    <p class="card-text"></p>
+                                    <strong class="harga">{{ rupiah($dat->harga) }}</strong>
                                 </div>
                             </div>
                         </div>
                     @endforeach
 
 
-
                 </div>
+
+            </div>
 
             </div>
         </section><!-- End Portfolio Section -->

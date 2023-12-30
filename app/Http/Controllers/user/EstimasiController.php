@@ -11,6 +11,7 @@ class EstimasiController extends Controller
     public function index()
     {
         $data = [
+            'title' => "Estimasi Produksi",
             'kayu'  => '',
             'triplek' => '',
             'kaca'  => '',
@@ -73,6 +74,7 @@ class EstimasiController extends Controller
         $matrix = collect([$langkah7, $langkah8, $normalisasi3]);
 
         $data = [
+            'title' => "Estimasi Produksi",
             'kayu'  => $kayu,
             'triplek' => $triplek,
             'kaca'  => $kaca,

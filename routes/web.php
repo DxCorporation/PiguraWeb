@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\EstimasiController;
 use App\Http\Controllers\admin\ProdukController;
@@ -39,6 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/bahan/hapus/{id}', [EstimasiController::class, 'bahanHapus']);
     Route::post('/admin/formula/create', [EstimasiController::class, 'formulaCreate']);
     Route::resource('/admin/produk', ProdukController::class);
+    Route::resource('/admin/kategori', CategoryController::class)->only([
+        'index', 'store', 'update', 'destroy'
+    ]);
 });
 
 

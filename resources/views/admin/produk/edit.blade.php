@@ -28,6 +28,15 @@
                 <input type="text" name="nama" class="form-control" value="{{ old('nama', $produk->nama) }}">
             </div>
             <div class="mb-3">
+                <label for="category" class="form-label">Kategori</label>
+                <select name="category_id" id="category" class="form-select">
+                    <option value="{{ $produk->category_id }}" hidden>{{ $produk->Category->nama }}</option>
+                    @foreach ($categories as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="img" class="form-label">Image</label>
                 <input name="img" class="form-control mb-2" type="file" id="img"
                     accept=".jpg, .jpeg, .png, .webp" value="{{ $produk->img }}">

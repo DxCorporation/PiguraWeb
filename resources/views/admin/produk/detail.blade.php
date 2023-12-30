@@ -13,6 +13,12 @@
                     <td>{{ $produks->nama }}</td>
                 </tr>
                 <tr>
+                    <th>Kategori</th>
+                    <td>
+                        {{ $produks->Category->nama }}
+                    </td>
+                </tr>
+                <tr>
                     <th>Gambar</th>
                     <td><img src="{{ asset('storage/back/' . $produks->img) }}" alt="" width="150px"></td>
                 </tr>

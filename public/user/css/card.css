@@ -1,0 +1,16 @@
+.card-img-top-fix {
+    height: 250px;
+    width : auto;
+    object-fit: cover;
+}
+
+.p-card:hover {
+    border-style: solid;
+    border-width: 3px;
+    border-color:  #7cc576;
+    transition: 0.1s;
+}
+
+.harga {
+    color: #7cc576;
+}

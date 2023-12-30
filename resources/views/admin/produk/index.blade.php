@@ -6,6 +6,10 @@
 
 @section('content')
     <div class="swal" data-swal="{{ session('success') }}"></div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Produk</h1>
+
+    </div>
     <div class="card">
         <a href="{{ url('/admin/produk/create') }}" class="btn btn-success"> <i class="ti ti-plus"></i> Tambah Produk</a>
     </div>
@@ -18,6 +22,7 @@
                         <th scope="col" width="5%">No</th>
                         <th scope="col">Gambar</th>
                         <th scope="col">Nama</th>
+                        <th scope="col">Kategori</th>
                         <th scope="col" class="text-center">Harga</th>
                         <th scope="col" class="text-center">Option</th>
                     </tr>
@@ -92,6 +97,10 @@
                     {
                         data: 'nama',
                         name: 'nama'
+                    },
+                    {
+                        data: 'category_id',
+                        name: 'category_id'
                     },
                     {
                         data: 'harga',

@@ -9,6 +9,8 @@ class TeamController extends Controller
 {
     public function index()
     {
-        return view('user.team');
-    }  
+        return view('user.team', [
+            'title' => "Pengembang web"
+        ]);
+    }
 }

@@ -3,24 +3,44 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class ProdukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        function rupiah($angka)
+        {
+            if ($angka != null) {
+                $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
+                return $hasil_rupiah;
+            }
+        }
+    }
+
     public function index()
     {
 
         if (request()->ajax()) {
-            $produk = Produk::latest()->get();
+            $produk = Produk::with('Category')->latest()->get();
 
             return DataTables::of($produk)
                 ->addIndexColumn()
+                ->addColumn('category_id', function ($produk) {
+                    return $produk->Category->nama;
+                })
+                ->addColumn('harga', function ($produk) {
+                    return rupiah($produk->harga);
+                })
                 ->addColumn('img', function ($produk) {
                     return '
                         <img src="' . asset("storage/back/" . $produk->img) . '" alt="" width="100px">
@@ -37,7 +57,7 @@ class ProdukController extends Controller
                         </div>
                     ';
                 })
-                ->rawColumns(['img', 'button'])
+                ->rawColumns(['category_id', 'img', 'button', 'harga'])
                 ->make();
         }
         return view('admin.produk.index');
@@ -48,7 +68,9 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('admin.produk.create');
+        return view('admin.produk.create', [
+            'categories'    => Category::get()
+        ]);
     }
 
     /**
@@ -57,6 +79,7 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'category_id'         => 'required',
             'nama'         => 'required',
             'harga'          => 'required',
             'desc'          => 'required',
@@ -68,6 +91,7 @@ class ProdukController extends Controller
         $file->storeAs('public/back/', $fileName);
 
         $data['img'] = $fileName;
+        $data['slug'] = Str::slug($data['nama']);
         Produk::create($data);
 
         return redirect(url('admin/produk'))->with('success', 'Produk Berhasil Ditambah');
@@ -78,14 +102,7 @@ class ProdukController extends Controller
      */
     public function show(string $id)
     {
-        function rupiah($angka)
-        {
-            if ($angka != null) {
-                $hasil_rupiah = "Rp " . number_format($angka, 2, ',', '.');
-                return $hasil_rupiah;
-            }
-        }
-        $produks = Produk::where('id', $id)->first();
+        $produks = Produk::with('Category')->where('id', $id)->first();
 
         return view('admin.produk.detail', [
             'produks'   => $produks,
@@ -98,9 +115,10 @@ class ProdukController extends Controller
      */
     public function edit(string $id)
     {
-        $produk = Produk::where('id', $id)->first();
+        $produk = Produk::with('Category')->where('id', $id)->first();
         return view('admin.produk.edit', [
-            'produk'    => $produk
+            'produk'    => $produk,
+            'categories'    => Category::latest()->get()
         ]);
     }
 
@@ -111,6 +129,7 @@ class ProdukController extends Controller
     {
         $data = $request->validate([
             'nama'         => 'required',
+            'category_id'         => 'required',
             'harga'          => 'required',
             'desc'          => 'required',
             'img'           => ['nullable', 'image', 'file', 'max:3024'],
@@ -126,6 +145,7 @@ class ProdukController extends Controller
         } else {
             $data['img'] = $request->imgLama;
         }
+        $data['slug'] = Str::slug($data['nama']);
 
         Produk::find($id)->update($data);
 

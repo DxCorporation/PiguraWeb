@@ -11,7 +11,9 @@ class PetunjukController extends Controller
 {
     public function index()
     {
-        
-        return view('user.petunjuk');
-    }  
+
+        return view('user.petunjuk', [
+            'title' => "Petunjuk Penggunaan"
+        ]);
+    }
 }
