@@ -59,6 +59,7 @@
                     <li><a class="nav-link scrollto " href="{{ url('/Estimasi') }}#estimasi"> Estimasi</a></li>
 
                     <li><a class="nav-link scrollto" href="{{ url('/Developer') }}#team">Pengembang</a></li>
+                    <li><a class="nav-link scrollto" href="{{ url('/admin/dashboard') }}">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
