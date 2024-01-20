@@ -28,6 +28,7 @@ Route::get('/Produk', [ProdukEstimasiContoller::class, 'index']);
 Route::get('/Developer', [TeamController::class, 'index']);
 Route::get('/Estimasi', [esController::class, 'index']);
 Route::post('/estimasi', [esController::class, 'hasil']);
+Route::post('/register-estimasi', [esController::class, 'register']);
 
 
 Route::middleware('auth')->group(function () {

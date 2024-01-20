@@ -12,8 +12,26 @@
                  </div>
 
                  <div class="row">
+                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                         <div class="member" data-aos="zoom-in">
+                             <div class="member-img">
+                                 <img src="user/img/team/DosPem.png" class="img-fluid" alt="">
+                                 <div class="social">
+                                     <a href=""><i class="bi bi-twitter"></i></a>
+                                     <a href=""><i class="bi bi-facebook"></i></a>
+                                     <a href=""><i class="bi bi-instagram"></i></a>
+                                     <a href=""><i class="bi bi-linkedin"></i></a>
+                                 </div>
+                             </div>
+                             <div class="member-info">
+                                 <h4>Yumarlin MZ, S.Kom., M.Pd., M.Kom.</h4>
+                                 <span>Dosen Pembimbing</span>
 
-                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                          <div class="member" data-aos="zoom-in" data-aos-delay="100">
                              <div class="member-img">
                                  <img src="user/img/team/Ridwan.jpeg" class="img-fluid" alt="">
@@ -33,7 +51,7 @@
                      </div>
 
 
-                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                          <div class="member" data-aos="zoom-in">
                              <div class="member-img">
                                  <img src="user/img/team/putranta.jpg" class="img-fluid" alt="">
@@ -54,7 +72,7 @@
                          </div>
                      </div>
 
-                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                          <div class="member" data-aos="zoom-in" data-aos-delay="200">
                              <div class="member-img">
                                  <img src="user/img/team/Parman.jpeg" class="img-fluid" alt="">
@@ -73,46 +91,12 @@
                          </div>
                      </div>
 
-                     
+
 
                  </div>
 
              </div>
          </section><!-- End Team Section -->
-         <section id="team" class="team">
-             <div class="container">
 
-                 <div class="section-title" data-aos="fade-up">
-                     <h2>Dosen Pembimbing</h2>
-                     <p>Projek Akhir Mata Kuliah Metode Numerik Universitas Janabadra</p>
-                 </div>
-
-                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                         
-                        
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                         <div class="member" data-aos="zoom-in">
-                             <div class="member-img">
-                                 <img src="user/img/team/DosPem.png" class="img-fluid" alt="">
-                                 <div class="social">
-                                     <a href=""><i class="bi bi-twitter"></i></a>
-                                     <a href=""><i class="bi bi-facebook"></i></a>
-                                     <a href=""><i class="bi bi-instagram"></i></a>
-                                     <a href=""><i class="bi bi-linkedin"></i></a>
-                                 </div>
-                             </div>
-                             <div class="member-info">
-                                 <h4>Yumarlin MZ, S.Kom., M.Pd., M.Kom.</h4>
-                                 <span>Dosen Pembimbing</span>
-
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-
-                     </div>
-                 </div>
      </main>
  @endsection

@@ -106,7 +106,7 @@
                                 <div class="col-sm-6">
                                     <div class="mb-2 card">
                                         <div class="card-header">
-                                            <h4>Hasil Perhitungan</h4>
+                                            <h4>Hasil Estimasi Produk</h4>
                                         </div>
                                         <div class="card-body">
                                             <table class="table">
